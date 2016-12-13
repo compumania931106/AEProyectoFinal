@@ -19,16 +19,17 @@ and open the template in the editor.
         <script type="text/javascript" src="js/plugins/dataTables.responsive.min.js"></script>
         <script type="text/javascript" src="js/plugins/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
-        
-        
+
         <script type="text/javascript" src="js/jindex.js"></script>
-        
+
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/jquery.growl.css">
         <link rel="stylesheet" href="css/jquery.dataTables.min.css">
         <link rel="stylesheet" href="css/responsive.dataTables.css">
         <link rel="stylesheet" href="css/sweetalert.css">
+        <link rel="stylesheet" href="css/shop-homepage.css">
+
     </head>
     <body>
         <!-- Header -->
@@ -53,14 +54,69 @@ and open the template in the editor.
                         </div>
                         <button type="submit" class="btn btn-default">Buscar</button>
                     </form>
-                    <div id="menu">
-                       
+                    <div id="navMenu" class="navMenu">
+
                     </div>
-                    
-                    
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
         <!-- End Header -->
+
+
+        <!-- Page Content -->
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <div class="row carousel-holder">
+
+                        <div class="col-md-12">
+                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    </div>
+                                    <div class="item">
+                                        <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    </div>
+                                    <div class="item">
+                                        <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    </div>
+                                </div>
+                                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                </a>
+                                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div id="divCatalog">
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+
+
     </body>
 </html>
