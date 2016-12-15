@@ -5,25 +5,24 @@
  */
 package mx.edu.ittepic.proyectofinal.servlets;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import mx.edu.ittepic.proyectofinal.utis.Message;
+import mx.edu.ittepic.proyectofinal.ejbs.ejbRoles;
 
 /**
  *
  * @author VictorManuel
  */
-@WebServlet(name = "CloseSession", urlPatterns = {"/CloseSession"})
-public class CloseSession extends HttpServlet {
-
+@WebServlet(name = "NewRole", urlPatterns = {"/NewRole"})
+public class NewRole extends HttpServlet {
+    @EJB
+    private ejbRoles ejb;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -41,10 +40,10 @@ public class CloseSession extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet CloseSession</title>");            
+            out.println("<title>Servlet NewRole</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet CloseSession at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet NewRole at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -62,25 +61,7 @@ public class CloseSession extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("application/json;charset=UTF-8");
-        response.setHeader("Cache-Control", "no-store");
-        Message m = new Message();
-        GsonBuilder builder = new GsonBuilder();
-        Gson gson = builder.create();
-        PrintWriter out = response.getWriter();
-        
-        HttpSession misession = (HttpSession) request.getSession();
-        misession.removeAttribute("apikey");
-        misession.removeAttribute("username");
-        misession.removeAttribute("roleid");
-        misession.invalidate();
-        
-        m.setCode(200);
-        m.setMsg("Session cerrada correctamente");
-        m.setDetail("OK");
-        
-        out.println(gson.toJson(m));
-        
+        processRequest(request, response);
     }
 
     /**
@@ -94,7 +75,12 @@ public class CloseSession extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("application/json;charset=UTF-8");
+        response.setHeader("Cache-Control", "no-store");
+        String rolename = request.getParameter("rolename");
+        PrintWriter out = response.getWriter();
+        
+        out.println(ejb.newRole(rolename));
     }
 
     /**

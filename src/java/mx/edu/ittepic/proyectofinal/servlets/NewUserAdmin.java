@@ -5,24 +5,25 @@
  */
 package mx.edu.ittepic.proyectofinal.servlets;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import mx.edu.ittepic.proyectofinal.utis.Message;
+import mx.edu.ittepic.proyectofinal.ejbs.ejbUsers;
 
 /**
  *
  * @author VictorManuel
  */
-@WebServlet(name = "CloseSession", urlPatterns = {"/CloseSession"})
-public class CloseSession extends HttpServlet {
+@WebServlet(name = "NewUserAdmin", urlPatterns = {"/NewUserAdmin"})
+public class NewUserAdmin extends HttpServlet {
+
+    @EJB
+    private ejbUsers ejb;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +42,10 @@ public class CloseSession extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet CloseSession</title>");            
+            out.println("<title>Servlet NewUserAdmin</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet CloseSession at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet NewUserAdmin at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -62,25 +63,7 @@ public class CloseSession extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("application/json;charset=UTF-8");
-        response.setHeader("Cache-Control", "no-store");
-        Message m = new Message();
-        GsonBuilder builder = new GsonBuilder();
-        Gson gson = builder.create();
-        PrintWriter out = response.getWriter();
-        
-        HttpSession misession = (HttpSession) request.getSession();
-        misession.removeAttribute("apikey");
-        misession.removeAttribute("username");
-        misession.removeAttribute("roleid");
-        misession.invalidate();
-        
-        m.setCode(200);
-        m.setMsg("Session cerrada correctamente");
-        m.setDetail("OK");
-        
-        out.println(gson.toJson(m));
-        
+        processRequest(request, response);
     }
 
     /**
@@ -94,7 +77,31 @@ public class CloseSession extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("application/json;charset=UTF-8");
+        response.setHeader("Cache-control", "no-store");
+        
+        PrintWriter p = response.getWriter();
+        
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String phone = request.getParameter("phone");
+        String neigborhood = request.getParameter("neigborhood");
+        String zipcode = request.getParameter("zipcode");
+        String city = request.getParameter("city");
+        String country = request.getParameter("country");
+        String state = request.getParameter("state");
+        String region = request.getParameter("region");
+        String street = request.getParameter("street");
+        String email = request.getParameter("email");
+        String streetnumber = request.getParameter("streetnumber");
+        String photo = request.getParameter("photo");
+        String cellphone = request.getParameter("cellphone");
+        String com = request.getParameter("com");
+        String rol = request.getParameter("rol");
+        String gender = request.getParameter("gender");
+     
+        
+        p.println(ejb.newUser(username, password, phone, neigborhood, zipcode, city, country, state, region, street, email, streetnumber, photo, cellphone, com, rol, gender));
     }
 
     /**

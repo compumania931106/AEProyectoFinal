@@ -21,8 +21,8 @@ import mx.edu.ittepic.proyectofinal.utis.Message;
  *
  * @author VictorManuel
  */
-@WebServlet(name = "CloseSession", urlPatterns = {"/CloseSession"})
-public class CloseSession extends HttpServlet {
+@WebServlet(name = "CheckRoleID", urlPatterns = {"/CheckRoleID"})
+public class CheckRoleID extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +41,10 @@ public class CloseSession extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet CloseSession</title>");            
+            out.println("<title>Servlet CheckRoleID</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet CloseSession at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet CheckRoleID at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -70,17 +70,19 @@ public class CloseSession extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         HttpSession misession = (HttpSession) request.getSession();
-        misession.removeAttribute("apikey");
-        misession.removeAttribute("username");
-        misession.removeAttribute("roleid");
-        misession.invalidate();
+        String roleid = (String) misession.getAttribute("roleid");
         
-        m.setCode(200);
-        m.setMsg("Session cerrada correctamente");
-        m.setDetail("OK");
+        if(roleid != null){
+            m.setCode(200);
+            m.setMsg("Ya hay session iniciada");
+            m.setDetail(roleid);
+        }else{
+            m.setCode(401);
+            m.setMsg("No hay session iniciada");
+            m.setDetail("OK");
+        }
         
         out.println(gson.toJson(m));
-        
     }
 
     /**

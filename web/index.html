@@ -11,6 +11,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <script type="text/javascript" src="js/plugins/jquery-3.1.0.min.js"></script>
         <script type="text/javascript" src="js/plugins/jquery.validate.min.js"></script>
         <script type="text/javascript" src="js/plugins/additional-methods.min.js"></script>
@@ -32,6 +33,186 @@ and open the template in the editor.
 
     </head>
     <body>
+
+        <div id="modalNewUser" class="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3>Nuevo usuario</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form  id="frmNewUser">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="username">Usuario:</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <input class="form-control" type="text" id="username" name="username" placeholder="Ingrese un nombre de usuario">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="password">Contraseña:</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-lock"></i>
+                                            </span>
+                                            <input class="form-control" type="password" id="password" name="password" placeholder="Ingrese una contraseña">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="street">Calle:</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-menu-right"></i>
+                                            </span>
+                                            <input class="form-control" type="text" id="street" name="street" placeholder="Ingrese nombre de la calle">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="streetnumber">Numero:</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-menu-right"></i>
+                                            </span>
+                                            <input class="form-control" type="text" id="streetnumber" name="streetnumber" placeholder="Ingrese numero de la casa">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="neigborhood">Colonia:</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-menu-right"></i>
+                                            </span>
+                                            <input class="form-control" type="text" id="neigborhood" name="neigborhood" placeholder="Ingrese nombre de la colonia">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="zipcode">Codigo Postal:</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-menu-right"></i>
+                                            </span>
+                                            <input class="form-control" type="text" id="zipcode" name="zipcode" placeholder="Ingrese codigo postal">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="city">Ciudad:</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-menu-right"></i>
+                                            </span>
+                                            <input class="form-control" type="text" id="city" name="city" placeholder="Ingrese su ciudad">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="region">Región:</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-menu-right"></i>
+                                            </span>
+                                            <input class="form-control" type="text" id="region" name="region" placeholder="Ingrese la región">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="state">Estado:</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-menu-right"></i>
+                                            </span>
+                                            <input class="form-control" type="text" id="state" name="state" placeholder="Ingrese el estado">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="country">Pais:</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-menu-right"></i>
+                                            </span>
+                                            <input class="form-control" type="text" id="country" name="country" placeholder="Ingrese el pais">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="phone">Telefono:</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-phone-alt"></i>
+                                            </span>
+                                            <input class="form-control" type="text" id="phone" name="phone" placeholder="Ingrese un numero de telefono fijo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="cellphone">Celular:</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-earphone"></i>
+                                            </span>
+                                            <input class="form-control" type="text" id="cellphone" name="cellphone" placeholder="Ingrese un numero de celular">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="email">Email:</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-envelope"></i>
+                                            </span>
+                                            <input class="form-control" type="text" id="email" name="email" placeholder="Ingrese un correo electronico">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="gender">Rol:</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-king"></i>
+                                            </span>
+                                            <select name="gender" id="gender" class="form-control">
+                                                <option value="M">Masculino</option>
+                                                <option value="F">Femenino</option> 
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btnAgregar" type="button" class="btn-sm btn-primary">Registrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <!-- Header -->
         <nav class="navbar navbar-default navbar-inverse" style="border-radius:0px !important; margin-bottom:0px;">
             <div class="container-fluid">
@@ -104,7 +285,7 @@ and open the template in the editor.
                     <div class="row">
 
                         <div id="divCatalog">
-                            
+
                         </div>
 
                     </div>

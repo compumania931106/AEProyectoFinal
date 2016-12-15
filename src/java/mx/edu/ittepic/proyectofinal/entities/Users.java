@@ -54,7 +54,21 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Users.getUser", query = "SELECT u FROM Users u WHERE u.username = :username AND u.password = :password"),
     @NamedQuery(name = "Users.updateUser", query = "UPDATE Users u SET u.apikey = :apikey WHERE u.userid = :userid"),
     @NamedQuery(name = "Users.findByApikey", query = "SELECT u FROM Users u WHERE u.apikey = :apikey"),
+    @NamedQuery(name = "Users.updateUserE", query = "UPDATE Users u SET u.apikey = :apikey WHERE u.userid = :userid"),
+    @NamedQuery(name = "Users.getUser", query = "SELECT u FROM Users u WHERE u.username = :username AND u.password = :password"),
     @NamedQuery(name = "Users.newUser", query = "UPDATE Users u SET u.username = :username, u.password = :password, u.phone = :phone,"
+            + "u.neigborhood = :neigborhood, u.zipcode = :zipcode, u.city = :city, u.country = :country, u.state = :state, u.region = :region,"
+            + "u.street = :street, u.email = :email, u.streetnumber = :streetnumber, u.photo = :photo, u.cellphone = :cellphone, u.companyid = :companyid,"
+            + "u.roleid = :roleid, u.gender = :gender WHERE u.userid = :userid"),
+    @NamedQuery(name = "Users.updateUserWithPassword", query = "UPDATE Users u SET u.username = :username, u.password = :password, u.phone = :phone,"
+            + "u.neigborhood = :neigborhood, u.zipcode = :zipcode, u.city = :city, u.country = :country, u.state = :state, u.region = :region,"
+            + "u.street = :street, u.email = :email, u.streetnumber = :streetnumber, u.photo = :photo, u.cellphone = :cellphone, u.companyid = :companyid,"
+            + "u.roleid = :roleid, u.gender = :gender WHERE u.userid = :userid"),
+    @NamedQuery(name = "Users.updateUserWithoutPassword", query = "UPDATE Users u SET u.username = :username, u.phone = :phone,"
+            + "u.neigborhood = :neigborhood, u.zipcode = :zipcode, u.city = :city, u.country = :country, u.state = :state, u.region = :region,"
+            + "u.street = :street, u.email = :email, u.streetnumber = :streetnumber, u.photo = :photo, u.cellphone = :cellphone, u.companyid = :companyid,"
+            + "u.roleid = :roleid, u.gender = :gender WHERE u.userid = :userid"),
+    @NamedQuery(name = "Users.updateUserWithPasswordE", query = "UPDATE Users u SET u.username = :username, u.password = :password, u.phone = :phone,"
             + "u.neigborhood = :neigborhood, u.zipcode = :zipcode, u.city = :city, u.country = :country, u.state = :state, u.region = :region,"
             + "u.street = :street, u.email = :email, u.streetnumber = :streetnumber, u.photo = :photo, u.cellphone = :cellphone, u.companyid = :companyid,"
             + "u.roleid = :roleid, u.gender = :gender WHERE u.userid = :userid")})

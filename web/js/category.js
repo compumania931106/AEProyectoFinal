@@ -7,23 +7,23 @@
 
 
 $(function () {
-    $('#mRoles').trigger('click');
+   
 
 
 
-    $('#frmRole').validate({
+    $('#frmCategory').validate({
         rules: {
-            rolename: {
+            categoryname: {
                 minlength: 3,
                 maxlength: 20,
                 required: true
             }
         },
         messages: {
-            rolename: {
+            categoryname: {
                 minlength: "Introduzca al menos tres caracteres",
                 maxlength: "Introdusca menos de 20 caracteres",
-                required: "Capture el nombre del rol"
+                required: "Capture el nombre de la categoria"
             }
         },
         highlight: function (element) {
@@ -42,24 +42,24 @@ $(function () {
             }
         },
         submitHandler: function (form) {
-            newRole();
+            newCategory();
             return false;
         }
     });
 
-    $('#frmEditRole').validate({
+    $('#frmEditCategory').validate({
         rules: {
-            rolename2: {
+            categoryname2: {
                 minlength: 3,
                 maxlength: 20,
                 required: true
             }
         },
         messages: {
-            rolename2: {
+            categoryname2: {
                 minlength: "Introduzca al menos tres caracteres",
                 maxlength: "Introdusca menos de 20 caracteres",
-                required: "Capture el nombre del rol"
+                required: "Capture el nombre de la categoria"
             }
         },
         highlight: function (element) {
@@ -78,17 +78,17 @@ $(function () {
             }
         },
         submitHandler: function (form) {
-            updateRole();
+            updateCategory();
             return false;
         }
     });
 
-    $('#tbRoles').DataTable({
+    $('#tbCategory').DataTable({
         language: {
             url: "http://cdn.datatables.net/plug-ins/1.10.12/i18n/Spanish.json"
         },
         ajax: {
-            url: "GetRoles",
+            url: "GetCategorys",
             dataSrc: function (json) {
 
                 return $.parseJSON(json['msg']);
@@ -96,16 +96,16 @@ $(function () {
         },
         columns: [
             {
-                data: "roleid"
+                data: "categoryid"
             },
             {
-                data: "rolename"
+                data: "categoryname"
             },
             {
                 data: function (row) {
                     str = "<div align='center'>";
-                    str += "<button id='btnBorrar' class='btn btn-danger btn-xs' onclick='deleteRole(" + row["roleid"] + ")'><i class='glyphicon glyphicon-trash'></i></button>";
-                    str += "&nbsp;<button id='btnEditar' class = 'btn btn-success btn-xs' onClick = 'showRole(" + row['roleid'] + ",\"" + row['rolename'] + "\")'><i class='glyphicon glyphicon-edit'></i></button>";
+                    str += "<button id='btnBorrar' class='btn btn-danger btn-xs' onclick='deleteCategory(" + row["categoryid"] + ")'><i class='glyphicon glyphicon-trash'></i></button>";
+                    str += "&nbsp;<button id='btnEditar' class = 'btn btn-success btn-xs' onClick = 'showCategory(" + row['categoryid'] + ",\"" + row['categoryname'] + "\")'><i class='glyphicon glyphicon-edit'></i></button>";
                     str += "<div>";
                     return str;
                 }
@@ -116,29 +116,29 @@ $(function () {
     });
 
     $("#btnModificar").on('click', function () {
-        $("#frmEditRole").submit();
+        $("#frmEditCategory").submit();
     });
 });
 
-function showRole(roleid, rolename) {
-    $('#roleid').val(roleid);
-    $('#rolename2').val(rolename);
-    $("#modalRole").modal("show");
-    console.log("El id del rol es:" + roleid);
+function showCategory(categoryid, categoryname) {
+    $('#categoryid').val(categoryid);
+    $('#categoryname2').val(categoryname);
+    $("#modalCategory").modal("show");
 }
 
-function updateRole() {
+function updateCategory() {
+    console.log($('#categoryid').val());
     $.ajax({
-        url: "UpdateRole",
+        url: "UpdateCategory",
         type: "post",
-        data: {roleid: $('#roleid').val(),
-            rolename: $('#rolename2').val()}
+        data: {categoryid: $('#categoryid').val(),
+            categoryname: $('#categoryname2').val()}
     }).done(
             function (data) {
                 if (data.code === 200) {
-                    $("#modalRole").modal("hide");
+                    $("#modalCategory").modal("hide");
                     $.growl.notice({message: data.msg});
-                    $('#tbRoles').dataTable().api().ajax.reload();
+                    $('#tbCategory').dataTable().api().ajax.reload();
                 } else {
                     $.growl.error({message: data.msg});
                 }
@@ -150,7 +150,7 @@ function updateRole() {
     );
 }
 
-function deleteRole(id) {
+function deleteCategory(id) {
     swal({title: "¿Estás seguro que deseas eliminar?",
         text: "No podrás recuperar la información después de borrarla.",
         type: "warning",
@@ -161,17 +161,17 @@ function deleteRole(id) {
             function () {
                 $.ajax(
                         {
-                            url: "DeleteRole",
+                            url: "DeleteCategory",
                             type: "post",
-                            data: {roleid: id}
+                            data: {categoryid: id}
                         }
                 ).done(
                         function (data) {
                             if (data.code === 200) {
                                 //$.growl.notice({title: "Successful", message: data.msg });
                                 swal("Eliminado", data.msg, "success");
-                                $('#tbRoles').dataTable().api().ajax.reload();
-                                $('#rolename').val('');
+                                $('#tbCategory').dataTable().api().ajax.reload();
+                                //$('#rolename').val('');
                             } else {
                                 $.growl.error({message: data.msg});
                             }
@@ -188,17 +188,17 @@ function deleteRole(id) {
 
 }
 
-function newRole() {
+function newCategory() {
     $.ajax({
-        url: "NewRole",
+        url: "NewCategory",
         type: "post",
-        data: $('#frmRole').serialize()
+        data: $('#frmCategory').serialize()
     }).done(
             function (data) {
                 if (data.code === 200) {
                     $.growl.notice({message: data.msg});
-                    $('#tbRoles').dataTable().api().ajax.reload();
-                    $('#rolename').val('');
+                    $('#tbCategory').dataTable().api().ajax.reload();
+                    $('#categoryname').val('');
                 } else {
                     $.growl.error({message: data.msg});
                 }

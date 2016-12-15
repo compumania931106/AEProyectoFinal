@@ -1,0 +1,416 @@
+<script type="text/javascript" src="js/usuario.js"></script>
+
+<div id="modalUser" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Modificar Usuario</h3>
+            </div>
+            <div class="modal-body">
+                <form  id="frmEditUSer">
+                    
+                    <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="username">Usuario: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="hidden" id="userid" name="userid"/>
+                    <input class="form-control" type="text" id="username2" name="username2" placeholder="Ingrese un nombre de usuario:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="password">Contrasña:</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="password" id="password2" name="password2" placeholder="Ingrese una contraseña:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="phone">Telefono:</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="phone2" name="phone2" placeholder="Ingrese un numero telefonico:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="neigborhood">Colonia:</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="neigborhood2" name="neigborhood2" placeholder="Ingrese la colonia:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="zipcode">CP: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="zipcode2" name="zipcode2" placeholder="Ingrese el codigo postal:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="city">Ciudad: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="city2" name="city2" placeholder="Ingrese la ciudad">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="coutry">Pais: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="country2" name="country2" placeholder="Ingrese el pais:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="state">Estado: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="state2" name="state2" placeholder="Ingrese el estado:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="region">Region: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="region2" name="region2" placeholder="Ingrese la region:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="street">Calle: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="street2" name="street2" placeholder="Ingrese nombre de la calle:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="email">Email: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="email2" name="email2" placeholder="Ingrese email:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="streetnumber">Numero: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="streetnumber2" name="streetnumber2" placeholder="Ingrese numero de casa:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="photo">Fotografia: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="photo2" name="photo2" placeholder="Ingrese una fotografia:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="cellphone">Celular: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="cellphone2" name="cellphone2" placeholder="Ingrese numero de celular:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <label class="control-label" for="gender">Genero: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-king"></i>
+                    </span>
+                    <select name="cbEditGender" id="cbEditGender" class="form-control">
+                        <option value="M">Hombre</option>
+                        <option value="F">Mujer</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <label class="control-label" for="companyname">Compañia: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-king"></i>
+                    </span>
+                    <select name="cbEditCompany" id="cbEditCompany" class="form-control"></select>
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <label class="control-label" for="rolename">Rol:</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-king"></i>
+                    </span>
+                    <select name="cbEditRoles" id="cbEditRoles" class="form-control"></select>
+                </div>
+            </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="btnModificar" type="button" class="btn-sm btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="row">
+    <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+        <form id="frmUser" method="POST">
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="username">Usuario: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="username" name="username" placeholder="Ingrese un nombre de usuario:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="password">Contrasña:</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="password" id="password" name="password" placeholder="Ingrese una contraseña:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="phone">Telefono:</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="phone" name="phone" placeholder="Ingrese un numero telefonico:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="neigborhood">Colonia:</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="neigborhood" name="neigborhood" placeholder="Ingrese la colonia:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="zipcode">CP: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="zipcode" name="zipcode" placeholder="Ingrese el codigo postal:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="city">Ciudad: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="city" name="city" placeholder="Ingrese la ciudad">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="country">Pais: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="country" name="country" placeholder="Ingrese el pais:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="state">Estado: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="state" name="state" placeholder="Ingrese el estado:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="region">Region: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="region" name="region" placeholder="Ingrese la region:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="street">Calle: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="street" name="street" placeholder="Ingrese nombre de la calle:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="email">Email: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="email" name="email" placeholder="Ingrese email:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="streetnumber">Numero: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="streetnumber" name="streetnumber" placeholder="Ingrese numero de casa:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="photo">Fotografia: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="photo" name="photo" placeholder="Ingrese una fotografia:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="control-label" for="cellphone">Celular: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input class="form-control" type="text" id="cellphone" name="cellphone" placeholder="Ingrese numero de celular:">
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <label class="control-label" for="gender">Genero: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-king"></i>
+                    </span>
+                    <select name="cbGender" id="cbGender" class="form-control">
+                        <option value="M">Hombre</option>
+                        <option value="F">Mujer</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <label class="control-label" for="companyname">Compañia: </label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-king"></i>
+                    </span>
+                    <select name="cbCompany" id="cbCompany" class="form-control"></select>
+                </div>
+            </div>
+            
+            <div class="form-group col col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <label class="control-label" for="rolename">Rol:</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-king"></i>
+                    </span>
+                    <select name="cbRoles" id="cbRoles" class="form-control"></select>
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-primary btn-md"><i class="glyphicon glyphicon-save"></i>Guardar</button>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+
+<div class="row">&nbsp;</div>
+
+<div class="row">
+    <div class="col col-lg-10 col-md-10 col-sm-10 col-xs-10">
+        <table id="tbUsuarios">
+            <thead>
+                <tr>
+                    <th>Clave</th>
+                    <th>Usuario</th>
+                    <th>Contraseña</th>
+                    <th>Telefono Fijo</th>
+                    <th>Colonia</th>
+                    <th>CP</th>
+                    <th>Ciudad</th>
+                    <th>Pais</th>
+                    <th>Estado</th>
+                    <th>Region</th>
+                    <th>Calle</th>
+                    <th>Correo Elec.</th>
+                    <th>Num. Casa</th>
+                    <th>Fotografia</th>
+                    <th>Celular</th>
+                    <th>Genero</th>
+                    <th>Compañia</th>
+                    <th>Rol</th>
+                    <th>Operaciones</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
