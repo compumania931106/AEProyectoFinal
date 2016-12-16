@@ -46,7 +46,9 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Product.findByReorderpoint", query = "SELECT p FROM Product p WHERE p.reorderpoint = :reorderpoint"),
     @NamedQuery(name = "Product.findByCurrency", query = "SELECT p FROM Product p WHERE p.currency = :currency"),
     @NamedQuery(name = "Product.findBySalepricemay", query = "SELECT p FROM Product p WHERE p.salepricemay = :salepricemay"),
-    @NamedQuery(name = "Product.findByImage", query = "SELECT p FROM Product p WHERE p.image = :image")})
+    @NamedQuery(name = "Product.findByImage", query = "SELECT p FROM Product p WHERE p.image = :image"),
+    @NamedQuery(name = "Product.updateURL", query = "UPDATE Product p SET p.image = :image WHERE p.productid = :productid"),
+    @NamedQuery(name = "Product.deleteProduct", query = "DELETE FROM Product p WHERE p.productid = :productid")})
 public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -67,11 +69,11 @@ public class Product implements Serializable {
     @Column(name = "brand")
     private String brand;
     @Column(name = "purchprice")
-    private BigInteger purchprice;
+    private Double purchprice;
     @Column(name = "stock")
     private Integer stock;
     @Column(name = "salepricemin")
-    private BigInteger salepricemin;
+    private Double salepricemin;
     @Basic(optional = false)
     @NotNull
     @Column(name = "reorderpoint")
@@ -84,7 +86,7 @@ public class Product implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "salepricemay")
-    private BigInteger salepricemay;
+    private Double salepricemay;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 255)
@@ -105,7 +107,7 @@ public class Product implements Serializable {
         this.productid = productid;
     }
 
-    public Product(Integer productid, String brand, int reorderpoint, String currency, BigInteger salepricemay, String image) {
+    public Product(Integer productid, String brand, int reorderpoint, String currency, Double salepricemay, String image) {
         this.productid = productid;
         this.brand = brand;
         this.reorderpoint = reorderpoint;
@@ -146,11 +148,11 @@ public class Product implements Serializable {
         this.brand = brand;
     }
 
-    public BigInteger getPurchprice() {
+    public Double getPurchprice() {
         return purchprice;
     }
 
-    public void setPurchprice(BigInteger purchprice) {
+    public void setPurchprice(Double purchprice) {
         this.purchprice = purchprice;
     }
 
@@ -162,11 +164,11 @@ public class Product implements Serializable {
         this.stock = stock;
     }
 
-    public BigInteger getSalepricemin() {
+    public Double getSalepricemin() {
         return salepricemin;
     }
 
-    public void setSalepricemin(BigInteger salepricemin) {
+    public void setSalepricemin(Double salepricemin) {
         this.salepricemin = salepricemin;
     }
 
@@ -186,11 +188,11 @@ public class Product implements Serializable {
         this.currency = currency;
     }
 
-    public BigInteger getSalepricemay() {
+    public Double getSalepricemay() {
         return salepricemay;
     }
 
-    public void setSalepricemay(BigInteger salepricemay) {
+    public void setSalepricemay(Double salepricemay) {
         this.salepricemay = salepricemay;
     }
 

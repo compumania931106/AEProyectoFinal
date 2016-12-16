@@ -1,0 +1,298 @@
+<script type="text/javascript" src="js/products.js"></script>
+<script type="text/javascript" src="js/plugins/jquery.ajaxfileupload.js"></script>
+
+<div id="modalProduct" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Modificar Producto</h3>
+            </div>
+            <div class="modal-body">
+                <form  id="frmEditProduct">
+                    <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" for="code2">Codigo:</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </span>
+                                <input class="hidden" id="userid" name="productid"/>
+                                <input class="form-control" type="text" id="code2" name="code2" placeholder="Ingrese el codigo del producto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" for="productname2">Nombre del producto:</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </span>
+                                <input class="form-control" type="text" id="productname2" name="productname2" placeholder="Ingrese el nombre del producto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" for="brand2">Marca:</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </span>
+                                <input class="form-control" type="text" id="brand2" name="brand2" placeholder="Ingrese la marca">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" for="purchprice2">Precio de Compra:</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </span>
+                                <input class="form-control" type="text" id="purchprice2" name="purchprice2" placeholder="Ingrese el precio de compra">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" for="stock2">Stock:</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </span>
+                                <input class="form-control" type="text" id="stock2" name="stock2" placeholder="Ingrese el stock">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" for="salepricemin2">Precio al menudeo:</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </span>
+                                <input class="form-control" type="text" id="salepricemin2" name="salepricemin2" placeholder="Ingrese el precio al menudeo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" for="reorderpoint2">Punto de reorden:</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </span>
+                                <input class="form-control" type="text" id="reorderpoint2" name="reorderpoint2" placeholder="Ingrese el punto de reorden">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" for="currency2">Tipo de moneda:</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </span>
+                                <input class="form-control" type="text" id="currency2" name="currency2" placeholder="Ingrese tipo de moneda">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" for="cbCategortia2">Categoria:</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </span>
+                                <select name="cbCategoria2" id="cbCategoria2" class="form-control">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label" for="salepricemay2">Precio al Mayoreo:</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                </span>
+                                <input class="form-control" type="text" id="salepricemay2" name="salepricemay2" placeholder="Ingrese el precio al mayoreo">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary btn-md"><i class="glyphicon glyphicon-save"></i>Guardar</button>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="btnModificar" type="button" class="btn-sm btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+
+        <form id="frmProduct" method="POST">
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label class="control-label" for="code">Codigo:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input class="form-control" type="text" id="code" name="code" placeholder="Ingrese el codigo del producto">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label class="control-label" for="productname">Nombre del producto:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input class="form-control" type="text" id="productname" name="productname" placeholder="Ingrese el nombre del producto">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label class="control-label" for="brand">Marca:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input class="form-control" type="text" id="brand" name="brand" placeholder="Ingrese la marca">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label class="control-label" for="purchprice">Precio de Compra:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input class="form-control" type="text" id="purchprice" name="purchprice" placeholder="Ingrese el precio de compra">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label class="control-label" for="stock">Stock:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input class="form-control" type="text" id="stock" name="stock" placeholder="Ingrese el stock">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label class="control-label" for="salepricemin">Precio al menudeo:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input class="form-control" type="text" id="salepricemin" name="salepricemin" placeholder="Ingrese el precio al menudeo">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label class="control-label" for="reorderpoint">Punto de reorden:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input class="form-control" type="text" id="reorderpoint" name="reorderpoint" placeholder="Ingrese el punto de reorden">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label class="control-label" for="currency">Tipo de moneda:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input class="form-control" type="text" id="currency" name="currency" placeholder="Ingrese tipo de moneda">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label class="control-label" for="cbCategortia">Categoria:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <select name="cbCategoria" id="cbCategoria" class="form-control">
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label class="control-label" for="salepricemay">Precio al Mayoreo:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input class="form-control" type="text" id="salepricemay" name="salepricemay" placeholder="Ingrese el precio al mayoreo">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label class="control-label" for="image">Imagen:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input class="form-control" type="file" id="image" name="image" placeholder="Suba una imagen">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary btn-md"><i class="glyphicon glyphicon-save"></i>Guardar</button>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+
+<div class="row">&nbsp;</div>
+
+<div class="row">
+    <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <table id="tbProducts">
+            <thead>
+                <tr>
+                    <th>Clave</th>
+                    <th>Codigo</th>
+                    <th>Nombre del Producto</th>
+                    <th>Marca</th>
+                    <th>Precio de compra</th>
+                    <th>Stock</th>
+                    <th>Precio al Menudeo</th>
+                    <th>Precio al Mayoreo</th>
+                    <th>Punto de Reorden</th>
+                    <th>Moneda</th>
+                    <th>Categoria</th>
+                    <th>Operaciones</th>
+            </thead>
+        </table>
+    </div>
+</div>
